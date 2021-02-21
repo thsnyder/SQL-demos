@@ -1,5 +1,6 @@
 # SQL-demos
 SQL Portfolio
+Database can be viewed/downloaded here: https://github.com/thsnyder/SQL-demos/blob/main/chinook.db
 
 --Which tracks appeared in the most playlists? how many playlist did they appear in?
 ```
