@@ -2,6 +2,7 @@
 SQL Portfolio
 
 --Which tracks appeared in the most playlists? how many playlist did they appear in?
+```
 SELECT Name, Count(Name) AS "# of Playlists Song Appears in"
 FROM playlist_track
 JOIN tracks
@@ -9,3 +10,4 @@ JOIN tracks
 GROUP BY name
 ORDER BY Count(Name) DESC
 ;
+```
