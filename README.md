@@ -12,6 +12,7 @@ GROUP BY name
 ORDER BY Count(Name) DESC
 ;
 ```
+
 --Tracks that generated the most revenue
 ```
 SELECT name,
@@ -42,5 +43,20 @@ JOIN artists
 	ON a.ArtistId = artists.ArtistId
 GROUP BY Title
 ORDER BY "Revenue from Album" DESC
+;
+```
+
+--Which genre generates the most revenue
+```
+SELECT g.name,
+	COUNT(quantity) AS "Tracks Bought from Genre",
+	(COUNT(Quantity) * it.UnitPrice) AS Revenue
+FROM tracks t
+JOIN  genres g
+	ON t.GenreId = g.GenreId
+JOIN invoice_items it
+	ON t.TrackId = it.TrackId
+GROUP BY g.name
+ORDER BY Revenue DESC
 ;
 ```
