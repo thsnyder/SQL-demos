@@ -1,5 +1,5 @@
 # SQL-demos
-SQL Portfolio
+SQL Portfolio - Analyzing music sales
 Database can be viewed/downloaded here: https://github.com/thsnyder/SQL-demos/blob/main/chinook.db
 
 --Which tracks appeared in the most playlists? how many playlist did they appear in?
@@ -57,6 +57,17 @@ JOIN  genres g
 JOIN invoice_items it
 	ON t.TrackId = it.TrackId
 GROUP BY g.name
+ORDER BY Revenue DESC
+;
+```
+
+--Which countries have the highest sales revenue? 
+```
+SELECT InvoiceId,
+	BillingCountry,
+	SUM(Total) AS Revenue
+FROM invoices
+GROUP BY BillingCountry
 ORDER BY Revenue DESC
 ;
 ```
